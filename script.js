@@ -2,6 +2,7 @@
 
 function calcAge(birthYear) {
   const age = 2022 - birthYear;
+  const firstName = 'ali'; //this will the forst name inside the function, because js will look for the variable in the function first then it will look on the global scope if it's didn't find
   //console.log(firstName); //it will available because we define it in global scope
   function printAge() {
     const output = `${firstName} You're ${age}, born in ${birthYear}`;
@@ -27,6 +28,7 @@ function calcAge(birthYear) {
 }
 
 const firstName = 'Ahmed';
+console.log(firstName);
 
 calcAge(1991);
 //console.log(millenial);
