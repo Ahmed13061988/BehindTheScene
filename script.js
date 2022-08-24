@@ -14,3 +14,4 @@ function calcAge(birthYear) {
 const firstName = 'Ahmed';
 
 calcAge(1991);
+//console.log(age); //this will give an error, because the age is functional scope not global.
