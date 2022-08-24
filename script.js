@@ -15,3 +15,4 @@ const firstName = 'Ahmed';
 
 calcAge(1991);
 //console.log(age); //this will give an error, because the age is functional scope not global.
+//printAge(); // this will gives undefined error, because it was declared inside the function, so it's in functional scope
