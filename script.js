@@ -10,9 +10,11 @@ function calcAge(birthYear) {
     if (birthYear >= 1981 && birthYear <= 1996) {
       const str = `oh, you're a millenial, ${firstName} and your age is ${age}, you were born in ${birthYear}`;
       //we have the access to age, firstName, and birthYear because it's in outter scope in this case it's in calcAge Function and printAge function
+      var millenial = true;
       console.log(str);
       console.log(output);
     }
+    console.log(millenial); // this one will be accessable outside the block scope, because it's var and it's functions scope
     //console.log(str); //ReferenceError, because the variable was declared in the block scope
   }
   printAge();
@@ -22,5 +24,6 @@ function calcAge(birthYear) {
 const firstName = 'Ahmed';
 
 calcAge(1991);
+//console.log(millenial);
 //console.log(age); //this will give an error, because the age is functional scope not global.
 //printAge(); // this will gives undefined error, because it was declared inside the function, so it's in functional scope
