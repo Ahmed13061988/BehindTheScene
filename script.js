@@ -13,9 +13,14 @@ function calcAge(birthYear) {
       var millenial = true;
       console.log(str);
       console.log(output);
+
+      function add(a, b) {
+        return a + b;
+      }
     }
-    console.log(millenial); // this one will be accessable outside the block scope, because it's var and it's functions scope
+    console.log(millenial); // this one will be accessable outside the block scope, because it's var and it's functions scope( this variable will be available inside printAge() only)
     //console.log(str); //ReferenceError, because the variable was declared in the block scope
+    //add(2, 3); this will gives an error because it's defined in block in strict mode
   }
   printAge();
   return age;
