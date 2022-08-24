@@ -8,8 +8,10 @@ function calcAge(birthYear) {
     console.log(output);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
-      const str = `oh, you're a millenial, ${firstName}`;
+      const str = `oh, you're a millenial, ${firstName} and your age is ${age}, you were born in ${birthYear}`;
+      //we have the access to age, firstName, and birthYear because it's in outter scope in this case it's in calcAge Function and printAge function
       console.log(str);
+      console.log(output);
     }
     //console.log(str); //ReferenceError, because the variable was declared in the block scope
   }
