@@ -74,12 +74,23 @@
 
 //Example
 
-if (!numProduct) deleteShopingCart(); //!numProduct should be 10, and the condition here if it's 0 then call the dunction deleteShopingCart(), but in this case it will call the function anyway because the numProduct is undefined and we used ! before it and it will be true and the function called
-var numProduct = 10;
-function deleteShopingCart() {
-  console.log(`All products deleted`);
-}
+// if (!numProduct) deleteShopingCart(); //!numProduct should be 10, and the condition here if it's 0 then call the dunction deleteShopingCart(), but in this case it will call the function anyway because the numProduct is undefined and we used ! before it and it will be true and the function called
+// var numProduct = 10;
+// function deleteShopingCart() {
+//   console.log(`All products deleted`);
+// }
 
-var x = 1; // this will be on window object ( global object for JS)
-let y = 2; // this will not be on window object
-const z = 3; // this will not be on window object
+// var x = 1; // this will be on window object ( global object for JS)
+// let y = 2; // this will not be on window object
+// const z = 3; // this will not be on window object
+
+// this keyword
+
+//console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(2022 - birthYear);
+  console.log(this);
+};
+
+console.log(calcAge(1988));
