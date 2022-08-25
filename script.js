@@ -40,12 +40,28 @@
 
 // console.log(y);
 
-console.log(me); //undefined
-console.log(job); // reffrenceError cannot access job beofre it's initilization
-console.log(year); // never gets to this
+//variables
+// console.log(me); //undefined
+// console.log(job); // reffrenceError cannot access job beofre it's initilization
+// console.log(year); // never gets to this
 
-var me = 'Ahmed';
+// var me = 'Ahmed';
 
-let job = 'WebDeveloper';
+// let job = 'WebDeveloper';
 
-const year = '1988';
+// const year = '1988';
+
+//functions
+console.log(addDecl(1, 2));
+console.log(addExpr(1, 2));
+console.log(addArrow(1, 2));
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+const addArrow = (a, b) => a + b;
