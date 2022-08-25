@@ -51,23 +51,31 @@
 
 // const year = '1988';
 
-//functions
-console.log(addDecl(1, 2));
-//console.log(addExpr(1, 2)); // temporal dead zone
-//console.log(addArrow(1, 2)); // temporal dead zone
-console.log(addVar());
+// //functions
+// console.log(addDecl(1, 2));
+// //console.log(addExpr(1, 2)); // temporal dead zone
+// //console.log(addArrow(1, 2)); // temporal dead zone
+// console.log(addVar());
 
-function addDecl(a, b) {
-  return a + b;
+// function addDecl(a, b) {
+//   return a + b;
+// }
+
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => a + b;
+
+// var addVar = function () {
+//   // IT'S not a function error because we use var to store it
+//   return `Hello`;
+// };
+
+//Example
+
+if (!numProduct) deleteShopingCart(); //!numProduct should be 10, and the condition here if it's 0 then call the dunction deleteShopingCart(), but in this case it will call the function anyway because the numProduct is undefined and we used ! before it and it will be true and the function called
+var numProduct = 10;
+function deleteShopingCart() {
+  console.log(`All products deleted`);
 }
-
-const addExpr = function (a, b) {
-  return a + b;
-};
-
-const addArrow = (a, b) => a + b;
-
-var addVar = function () {
-  // IT'S not a function error because we use var to store it
-  return `Hello`;
-};
