@@ -115,3 +115,6 @@ const mattela = {
 mattela.calcAge = ahmed.calcAge; // barrow functions from one object to another
 
 mattela.calcAge();
+
+const f = ahmed.calcAge;
+f(); // now the f is just regular function that not attached to any object, the this keyword will be undefined.
