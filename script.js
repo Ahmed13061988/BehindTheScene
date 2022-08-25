@@ -79,3 +79,7 @@ var numProduct = 10;
 function deleteShopingCart() {
   console.log(`All products deleted`);
 }
+
+var x = 1; // this will be on window object ( global object for JS)
+let y = 2; // this will not be on window object
+const z = 3; // this will not be on window object
