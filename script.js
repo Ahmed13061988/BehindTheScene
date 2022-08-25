@@ -88,9 +88,30 @@
 
 //console.log(this);
 
-const calcAge = function (birthYear) {
+// const calcAge = function (birthYear) {
+//   console.log(2022 - birthYear);
+//   console.log(this);
+// };
+
+const calcAgeArrow = birthYear => {
   console.log(2022 - birthYear);
   console.log(this);
 };
 
-console.log(calcAge(1988));
+const ahmed = {
+  year: 1988,
+  calcAge: function () {
+    // return 2022 - this.year;
+    console.log(this);
+    console.log(2022 - this.year);
+  },
+};
+
+ahmed.calcAge();
+
+const mattela = {
+  year: 2017,
+};
+mattela.calcAge = ahmed.calcAge; // barrow functions from one object to another
+
+mattela.calcAge();
