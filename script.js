@@ -40,6 +40,10 @@
 
 // console.log(y);
 
+console.log(me); //undefined
+console.log(job); // reffrenceError cannot access job beofre it's initilization
+console.log(year); // never gets to this
+
 var me = 'Ahmed';
 
 let job = 'WebDeveloper';
