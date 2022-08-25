@@ -53,8 +53,9 @@
 
 //functions
 console.log(addDecl(1, 2));
-console.log(addExpr(1, 2));
-console.log(addArrow(1, 2));
+//console.log(addExpr(1, 2)); // temporal dead zone
+//console.log(addArrow(1, 2)); // temporal dead zone
+console.log(addVar());
 
 function addDecl(a, b) {
   return a + b;
@@ -65,3 +66,8 @@ const addExpr = function (a, b) {
 };
 
 const addArrow = (a, b) => a + b;
+
+var addVar = function () {
+  // IT'S not a function error because we use var to store it
+  return `Hello`;
+};
