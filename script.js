@@ -93,28 +93,43 @@
 //   console.log(this);
 // };
 
-const calcAgeArrow = birthYear => {
-  console.log(2022 - birthYear);
-  console.log(this);
-};
+// const calcAgeArrow = birthYear => {
+//   console.log(2022 - birthYear);
+//   console.log(this);
+// };
+
+// const ahmed = {
+//   year: 1988,
+//   calcAge: function () {
+//     // return 2022 - this.year;
+//     console.log(this);
+//     console.log(2022 - this.year);
+//   },
+// };
+
+// ahmed.calcAge();
+
+// const mattela = {
+//   year: 2017,
+// };
+// mattela.calcAge = ahmed.calcAge; // barrow functions from one object to another
+
+// mattela.calcAge();
+
+// const f = ahmed.calcAge;
+// f(); // now the f is just regular function that not attached to any object, the this keyword will be undefined.
+
+var firstName = 'Atyaf'; //in this case firstName will be in global object ( window)
 
 const ahmed = {
+  firstName: `Ahmed`,
   year: 1988,
   calcAge: function () {
     // return 2022 - this.year;
     console.log(this);
     console.log(2022 - this.year);
   },
+  greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-ahmed.calcAge();
-
-const mattela = {
-  year: 2017,
-};
-mattela.calcAge = ahmed.calcAge; // barrow functions from one object to another
-
-mattela.calcAge();
-
-const f = ahmed.calcAge;
-f(); // now the f is just regular function that not attached to any object, the this keyword will be undefined.
+ahmed.greet(); //Hey undefined, now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
