@@ -151,15 +151,34 @@
 // ahmed.calcAge();
 
 //Arguments keyword
-const addExpresion = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-console.log(addExpresion(2, 6));
+// const addExpresion = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// console.log(addExpresion(2, 6));
 
-const addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
+// const addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addArrow(1, 2);
+
+let age = 33;
+let oldAge = age;
+age = 34;
+console.log(age, oldAge);
+
+const me = {
+  name: 'Ahmed',
+  age: 34,
 };
 
-addArrow(1, 2);
+const friend = me;
+console.log(friend);
+
+friend.age = 35;
+console.log(friend);
+console.log(me);
+// when creating a new primitive type it will assign an address for it, if we change that, it will assing another address!
+//When we create an object it will assign an address to it, and if we create another object and assing it to the same object like the example above, it will just create two reference to the same object, because objects saved in HEAP not call stack
