@@ -128,12 +128,17 @@ const ahmed = {
     // return 2022 - this.year;
     console.log(this);
     console.log(2022 - this.year);
-    const self = this;
-
-    function isMillenial() {
-      //   console.log(this.year >= 1981 && this.year <= 1996);// this keyword will be not in the scope of the function,to solve that we need to save the this keyword into a vriable in it's own scope and then we can pass it over to the function
-      console.log(self.year >= 1981 && self.year <= 1996);
-    }
+    //Solution 1
+    //const self = this;
+    // function isMillenial() {
+    //   //   console.log(this.year >= 1981 && this.year <= 1996);// this keyword will be not in the scope of the function,to solve that we need to save the this keyword into a vriable in it's own scope and then we can pass it over to the function
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // }
+    //Solution 2
+    const isMillenial = () => {
+      console.log(this.year >= 1981 && this.year <= 1996); // using arrow function in this case, the this keyword will point to the parent this keyword, because arrow function does not have this keyword
+      //   console.log(self.year >= 1981 && self.year <= 1996);
+    };
     isMillenial();
   },
   greet: function () {
