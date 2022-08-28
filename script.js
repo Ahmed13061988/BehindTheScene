@@ -2,7 +2,7 @@
 
 // function calcAge(birthYear) {
 //   const age = 2022 - birthYear;
-//   const firstName = 'ali'; //this will the forst name inside the function, because js will look for the variable in the function first then it will look on the global scope if it's didn't find
+//   const firstName = 'ali'; //this will the firstName inside the function, because js will look for the variable in the function first then it will look on the global scope if it's didn't find
 //   //console.log(firstName); //it will available because we define it in global scope
 //   function printAge() {
 //     const output = `${firstName} You're ${age}, born in ${birthYear}`;
@@ -129,7 +129,9 @@ const ahmed = {
     console.log(this);
     console.log(2022 - this.year);
   },
-  greet: () => console.log(`Hey ${this.firstName}`),
+  greet: function () {
+    console.log(`Hey ${this.firstName}`);
+  }, // this keyword will point to the window object in case of arrow function
 };
 
-ahmed.greet(); //Hey undefined, now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
+ahmed.greet(); //Hey undefined(when we don't have var firstName = 'Atyaf';), now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
