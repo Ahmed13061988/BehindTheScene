@@ -174,11 +174,40 @@ const me = {
   age: 34,
 };
 
-const friend = me;
-console.log(friend);
+// const friend = me;
+// console.log(friend);
 
-friend.age = 35;
-console.log(friend);
-console.log(me);
+// friend.age = 35;
+// console.log(friend);
+// console.log(me);
 // when creating a new primitive type it will assign an address for it, if we change that, it will assing another address!
-//When we create an object it will assign an address to it, and if we create another object and assing it to the same object like the example above, it will just create two reference to the same object, because objects saved in HEAP not call stack
+//When we create an object it will assign an address to it, and if we create another object and assing it to the same object like the example above, it will just create two reference to the same object, because objects saved in HEAP not call stack.
+//Primitive types
+let lastName = `Hussein`;
+let oldLastName = lastName;
+lastName = 'Hussien';
+console.log(lastName, oldLastName);
+//Reference type
+const jessica = {
+  firstName: `Jessica`,
+  lastName: `Williams`,
+  age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = `Hussein`;
+console.log(`Before marriage`, jessica);
+console.log(`After marriage`, marriedJessica);
+
+//Copying objects
+const jessica2 = {
+  firstName: `Jessica`,
+  lastName: `Williams`,
+  age: 27,
+};
+const jessicaCopy = Object.assign({}, jessica2); // creating new object
+
+jessicaCopy.lastName = `Davis`;
+
+console.log(jessica2);
+console.log(jessicaCopy);
