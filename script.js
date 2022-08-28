@@ -128,6 +128,10 @@ const ahmed = {
     // return 2022 - this.year;
     console.log(this);
     console.log(2022 - this.year);
+    function isMillenial() {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    }
+    isMillenial();
   },
   greet: function () {
     console.log(`Hey ${this.firstName}`);
@@ -135,3 +139,5 @@ const ahmed = {
 };
 
 ahmed.greet(); //Hey undefined(when we don't have var firstName = 'Atyaf';), now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
+
+ahmed.calcAge();
