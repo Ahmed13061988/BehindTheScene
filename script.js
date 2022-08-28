@@ -119,33 +119,47 @@
 // const f = ahmed.calcAge;
 // f(); // now the f is just regular function that not attached to any object, the this keyword will be undefined.
 
-var firstName = 'Atyaf'; //in this case firstName will be in global object ( window)
+// var firstName = 'Atyaf'; //in this case firstName will be in global object ( window)
 
-const ahmed = {
-  firstName: `Ahmed`,
-  year: 1988,
-  calcAge: function () {
-    // return 2022 - this.year;
-    console.log(this);
-    console.log(2022 - this.year);
-    //Solution 1
-    //const self = this;
-    // function isMillenial() {
-    //   //   console.log(this.year >= 1981 && this.year <= 1996);// this keyword will be not in the scope of the function,to solve that we need to save the this keyword into a vriable in it's own scope and then we can pass it over to the function
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    // }
-    //Solution 2
-    const isMillenial = () => {
-      console.log(this.year >= 1981 && this.year <= 1996); // using arrow function in this case, the this keyword will point to the parent this keyword, because arrow function does not have this keyword
-      //   console.log(self.year >= 1981 && self.year <= 1996);
-    };
-    isMillenial();
-  },
-  greet: function () {
-    console.log(`Hey ${this.firstName}`);
-  }, // this keyword will point to the window object in case of arrow function
+// const ahmed = {
+//   firstName: `Ahmed`,
+//   year: 1988,
+//   calcAge: function () {
+//     // return 2022 - this.year;
+//     console.log(this);
+//     console.log(2022 - this.year);
+//     //Solution 1
+//     //const self = this;
+//     // function isMillenial() {
+//     //   //   console.log(this.year >= 1981 && this.year <= 1996);// this keyword will be not in the scope of the function,to solve that we need to save the this keyword into a vriable in it's own scope and then we can pass it over to the function
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // }
+//     //Solution 2
+//     const isMillenial = () => {
+//       console.log(this.year >= 1981 && this.year <= 1996); // using arrow function in this case, the this keyword will point to the parent this keyword, because arrow function does not have this keyword
+//       //   console.log(self.year >= 1981 && self.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+//   greet: function () {
+//     console.log(`Hey ${this.firstName}`);
+//   }, // this keyword will point to the window object in case of arrow function
+// };
+
+// ahmed.greet(); //Hey undefined(when we don't have var firstName = 'Atyaf';), now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
+
+// ahmed.calcAge();
+
+//Arguments keyword
+const addExpresion = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+console.log(addExpresion(2, 6));
+
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
 };
 
-ahmed.greet(); //Hey undefined(when we don't have var firstName = 'Atyaf';), now we have var firstName = "Atyaf"; the result will be Hey Atyaf, because this keyword found the variable firstName in the window object and gave it back! In another words this. will be window.
-
-ahmed.calcAge();
+addArrow(1, 2);
